@@ -1,0 +1,29 @@
+<br/>
+<div id="top"></div>  
+     <h1 style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black;margin:auto">Events</h1>
+     <br/>
+     <mat-divider></mat-divider>
+     <div >
+      <div class=" container col-xl-10 col-lg-8  col-md-12 col-sm-12 col-xs-12 mat-elevation-z4"  style="background-color:white; background-image: url(https://media.giphy.com/media/7eicfcGQy0Jr4nk0Y7/giphy.gif); margin: auto;padding:auto">
+          <div class="row" *ngIf="events?.length > 0 && events?.length > 0;else noEvents">
+            <br />
+            <div class="col-md-6 col-sm-12 col-xs-12" *ngFor="let event of events">
+              <!--Peverelist - Roll With The Punches-->
+              <div class="card" style="border-top:2px solid orange;border-bottom:2px solid orange;">
+                <div class="card-header"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.location}}</p></div>
+                <img class="card-img-top" src="{{event.pic}}" alt="Card image" style="width:100%">
+                
+                <div class="card-body">
+                <p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.body}}</p>
+                </div>
+                <div class="card-footer"><p style="font-family: 'Ubuntu', sans-serif;font-weight: bold;color:black">{{event.date}}</p></div>
+              </div>
+              <br />
+            </div>
+          </div>
+        </div>
+        <ng-template #noEvents>
+            <hr>
+            <h5>Sorry no Events could be found or fetched at the moment</h5>
+          </ng-template>
+        </div><br/><br/>
